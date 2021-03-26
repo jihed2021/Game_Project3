@@ -6,33 +6,63 @@
 //
 
 import Foundation
-class Game : Player {
-    var player1 : Fighter
-    var player2 : Fighter
+
+class Game  {
+
+    var player1 : Player
+    var player2 : Player
     var round : Int = 0
+    var choosedFighter : Fighter
     
-    init (round : Int ,Fighter:Fighter){
-        self.round = round
-        
-    func ChooseFighter () {
-            print ("choose your first fighter from your team"
-            + "\n1."
-            + "\n2."
-            + "\n3.")
-            if let answer = readLine() {
-                switch answer {
-                case "1" :
-                    self.player1 = fighters[0]
-                case "2":
-                    self.player1 = fighters[1]
-                case "3":
-                    self.player1 = fighters[2]
-                default :
-                print ("I dont understand your choice")
-                }
+    init (player1 : Player , player2 : Player , choosedFighter:Fighter){
+        self.player1 = player1
+        self.player2 = player2
+        self.choosedFighter = choosedFighter
+        round += 1
     }
     
+    func choosePlayer1() -> Fighter {
+       
+        print("please choose your first player from your Teams?")
+            if let choice = readLine() {
+                switch choice {
+                case "1":
+                    choosedFighter = player1.fighters[0]
+                case "2":
+                    choosedFighter =  player1.fighters[1]
+                case "3":
+                    choosedFighter =  player1.fighters[2]
+                default:
+                    print("I don't understand your choice")
+                }
+            }
+        return choosedFighter
+            }
+    func choosePlyer2 () ->Fighter {
+        
+        print("please choose your first player from your Teams?")
+        
+            if let choice = readLine() {
+                switch choice {
+                case "1":
+                    choosedFighter = player2.fighters[0]
+                case "2":
+                    choosedFighter = player2.fighters[1]
+                case "3":
+                    choosedFighter = player2.fighters[2]
+                default:
+                    print("I don't understand your choice")
+                }
+            }
+        return choosedFighter
+    }
+      // Après choix des combattants on commence le jeu
+   
     
-}
-}
-}
+    
+    }
+
+        
+
+
+

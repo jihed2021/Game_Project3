@@ -8,24 +8,22 @@
 import Foundation
 
 
-class Player : Fighter {
-   
-    var fighters  = [Fighter]()
+class Player {
     
-    init (Fighter:Fighter,fighter : String, fighterName : String ,lifePoints : Int, weaponName :String ,damage:Int) {
-        
-        super.init(fighter : fighter ,fighterName: fighterName, lifePoints: lifePoints, weaponName: weaponName, damage: damage)
+    var fighter : Fighter
+    var fighters = [Fighter]()
    
- func chooseThreeFighters() {
-        
+    init(fighter : Fighter,fighters : [Fighter]){
+        self.fighter = fighter
         for _ in 0...2 {
-    
-        self.fighters.append(Fighter)
+            self.fighters.append(fighter)
+        }
     }
-    }
-    
+        
 }
-}
+
+
+
 
 
 

@@ -7,5 +7,7 @@
 
 import Foundation
 
-print("Hello, World!")
+var myweapon = Weapon(weaponName: "klash", weaponDamage: 50)
+
+
 
