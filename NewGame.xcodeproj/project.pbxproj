@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C82735F3260A4DF60072829A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82735F2260A4DF60072829A /* Player.swift */; };
-		C82735F6260A4E050072829A /* Fighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82735F5260A4E050072829A /* Fighter.swift */; };
 		C82735F9260A4E140072829A /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82735F8260A4E140072829A /* Weapon.swift */; };
+		C871E7992611CB690062FE91 /* Fighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C871E7982611CB690062FE91 /* Fighter.swift */; };
 		C8942D17260A12AA00D25C2E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8942D16260A12AA00D25C2E /* main.swift */; };
 		C8942D1F260A16DE00D25C2E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8942D1E260A16DE00D25C2E /* Game.swift */; };
 /* End PBXBuildFile section */
@@ -28,8 +28,8 @@
 
 /* Begin PBXFileReference section */
 		C82735F2260A4DF60072829A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		C82735F5260A4E050072829A /* Fighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fighter.swift; sourceTree = "<group>"; };
 		C82735F8260A4E140072829A /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		C871E7982611CB690062FE91 /* Fighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fighter.swift; sourceTree = "<group>"; };
 		C8942D13260A12AA00D25C2E /* NewGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NewGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8942D16260A12AA00D25C2E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C8942D1E260A16DE00D25C2E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 				C8942D16260A12AA00D25C2E /* main.swift */,
 				C8942D1E260A16DE00D25C2E /* Game.swift */,
 				C82735F2260A4DF60072829A /* Player.swift */,
-				C82735F5260A4E050072829A /* Fighter.swift */,
+				C871E7982611CB690062FE91 /* Fighter.swift */,
 				C82735F8260A4E140072829A /* Weapon.swift */,
 			);
 			path = NewGame;
@@ -132,8 +132,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C82735F9260A4E140072829A /* Weapon.swift in Sources */,
+				C871E7992611CB690062FE91 /* Fighter.swift in Sources */,
 				C8942D17260A12AA00D25C2E /* main.swift in Sources */,
-				C82735F6260A4E050072829A /* Fighter.swift in Sources */,
 				C82735F3260A4DF60072829A /* Player.swift in Sources */,
 				C8942D1F260A16DE00D25C2E /* Game.swift in Sources */,
 			);

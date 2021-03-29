@@ -8,13 +8,15 @@
 import Foundation
 
 
-class Player {
+class Player : Fighter {
     
-    var fighter : Fighter
+    var fighter :Fighter
     var fighters = [Fighter]()
    
-    init(fighter : Fighter,fighters : [Fighter]){
+    init(fighters : [Fighter], fighter : Fighter, fighterName : String, weopon : Weapon){
         self.fighter = fighter
+        super.init(fighterName: fighterName, weopon: weopon)
+        
         for _ in 0...2 {
             self.fighters.append(fighter)
         }

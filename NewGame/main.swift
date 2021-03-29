@@ -6,8 +6,3 @@
 //
 
 import Foundation
-
-var myweapon = Weapon(weaponName: "klash", weaponDamage: 50)
-
-
-
