@@ -13,134 +13,124 @@ class Game {
     var player2 : Player
     var round : Int = 0
     var fighterFromTeam1 : Fighter
-    var fighterFromTeams2 : Fighter
-    var winner :  Fighter
-    init (player1 : Player , player2 : Player , fighterFromTeam1:Fighter,fighterFromTeams2 : Fighter , winner :Fighter ) {
-        self.player1 = player1
-        self.player2 = player2
-        self.fighterFromTeam1 = fighterFromTeam1
-        self.fighterFromTeams2 = fighterFromTeams2
-        self.winner = winner
-    }
-    
-    func choosePlayer1() -> Fighter {
-       
-        print("please choose your player from your Team?")
+    var fighterFromTeam2 : Fighter
+   
+    init () {
+        self.player1 = Player()
+        print ("team of \(player1.name) : \(player1.fighters)")
+        print("hi \(player1.name) please choose your fighter from your Team?,\(player1.fighters)")
             if let choice = readLine() {
                 switch choice {
                 case "1":
-                    fighterFromTeam1 = player1.fighters[0]
+                    self.fighterFromTeam1 = player1.fighters[0]
                     player1.fighters.remove(at: 0)
                 case "2":
-                    fighterFromTeam1 =  player1.fighters[1]
+                    self.fighterFromTeam1 =  player1.fighters[1]
                     player1.fighters.remove(at: 1)
                 case "3":
-                    fighterFromTeam1 =  player1.fighters[2]
+                    self.fighterFromTeam1 =  player1.fighters[2]
                     player1.fighters.remove(at: 2)
                 default:
                     print("I don't understand your choice")
+                    self.fighterFromTeam1 = player1.fighters[0]
+                    player1.fighters.remove(at: 0)
                 }
             }
-        return fighterFromTeam1
+            else {
+                self.fighterFromTeam1 = player1.fighters[0]
+                player1.fighters.remove(at: 0)
             }
-    func choosePlayer2 () ->Fighter {
-        
-        print("please choose your player from your Team?")
+        self.player2 = Player()
+        print ("team of \(player2.name) : \(player2.fighters)")
+        print("hi \(player2.name) please choose your player from your Team?")
         
             if let choice = readLine() {
                 switch choice {
                 case "1":
-                    fighterFromTeams2 = player2.fighters[0]
+                    self.fighterFromTeam2 = player2.fighters[0]
                     player2.fighters.remove(at: 0)
                 case "2":
-                    fighterFromTeams2 = player2.fighters[1]
+                    self.fighterFromTeam2 = player2.fighters[1]
                     player2.fighters.remove(at: 1)
                 case "3":
-                    fighterFromTeams2 = player2.fighters[2]
+                    self.fighterFromTeam2 = player2.fighters[2]
                     player2.fighters.remove(at: 2)
                 default:
                     print("I don't understand your choice")
+                    self.fighterFromTeam2 = player2.fighters[0]
+                    player2.fighters.remove(at: 0)
                 }
             }
-        return fighterFromTeams2
-    }
-      // Après choix des combattants on commence le jeu
-        
-    func Fight () -> String {
-
-       
-        while (player1.fighters.count != 0)  && (player2.fighters.count != 0) {
-            
-        // pour commencer le jeu chaque combattant choisi une arme
+            else {
+                self.fighterFromTeam2 = player2.fighters[0]
+                player2.fighters.remove(at: 0)
+            }
     
-            choosePlayer1().weopon.chooseArm()
-            choosePlayer2().weopon.chooseArm()
-            round += 1
+      // Après choix des combattants on commence le jeu
+    // pour commencer le jeu chaque combattant choisi une arme
         
+                fighterFromTeam1.weopon.changeArm()
+                fighterFromTeam2.weopon.changeArm()
+                round += 1
         
+        while (player1.fighters.count != 0)  && (player2.fighters.count != 0) {
+
         // pour commnecer le jeu le combattant qui a une arme plus faible en damage que l'autre peut commencer!
         
-            if fighterFromTeam1.weopon.weaponDamage < fighterFromTeams2.weopon.weaponDamage {
+            if fighterFromTeam1.weopon.weaponDamage < fighterFromTeam2.weopon.weaponDamage {
             
                 print ("fighter1 can start attack")
             
-                    while (fighterFromTeam1.lifePoint != 0) && (fighterFromTeams2.lifePoint != 0 ){
+                    while (fighterFromTeam1.lifePoint != 0) && (fighterFromTeam2.lifePoint != 0 ){
                
                 // Combat
                 
-                fighterFromTeams2.lifePoint -= fighterFromTeam1.weopon.weaponDamage
-                fighterFromTeams2.weopon.changeArm()
-                fighterFromTeam1.lifePoint -= fighterFromTeams2.weopon.weaponDamage
+                fighterFromTeam2.lifePoint -= fighterFromTeam1.weopon.weaponDamage
+                fighterFromTeam2.weopon.changeArm()
+                fighterFromTeam1.lifePoint -= fighterFromTeam2.weopon.weaponDamage
                 fighterFromTeam1.weopon.changeArm()
                 
                 // Fin de combat entre les deux premiers joueurs par la mort d'un d'entre eux
                 
-                            if (fighterFromTeam1.lifePoint == 0) && (fighterFromTeams2.lifePoint != 0) {
-                    
-                                print ("the winner is \(fighterFromTeams2)")
-                                winner = fighterFromTeams2
-                                fighterFromTeam1 = choosePlayer1()
-                       
+                            if (fighterFromTeam1.lifePoint == 0) && (fighterFromTeam2.lifePoint != 0) {
+                                print("the winner of the \(round) is \(fighterFromTeam2) ")
                             }else {
-                                print ("the winner is \(fighterFromTeam1)")
-                                winner = fighterFromTeam1
-                                fighterFromTeams2 = choosePlayer2()
+                                print("the winner of the \(round) is \(fighterFromTeam1) ")
                             }
                     }
-                return "the winner of the \(round) is \(winner) "
+                
             }else {
             
                 print("fighter2 can start attack")
            
-                    while (fighterFromTeam1.lifePoint != 0) && (fighterFromTeams2.lifePoint != 0 ){
+                    while (fighterFromTeam1.lifePoint != 0) && (fighterFromTeam2.lifePoint != 0 ){
                 
-                fighterFromTeam1.lifePoint -= fighterFromTeams2.weopon.weaponDamage
+                fighterFromTeam1.lifePoint -= fighterFromTeam2.weopon.weaponDamage
                 fighterFromTeam1.weopon.changeArm()
-                fighterFromTeams2.lifePoint -= fighterFromTeam1.weopon.weaponDamage
-                fighterFromTeams2.weopon.changeArm()
+                fighterFromTeam2.lifePoint -= fighterFromTeam1.weopon.weaponDamage
+                fighterFromTeam2.weopon.changeArm()
                 
-                            if (fighterFromTeam1.lifePoint == 0) && (fighterFromTeams2.lifePoint != 0) {
-                                print ("the winner is \(fighterFromTeams2)")
-                                winner = fighterFromTeams2
+                            if (fighterFromTeam1.lifePoint == 0) && (fighterFromTeam2.lifePoint != 0) {
+                                print( "the winner of the \(round) is \(fighterFromTeam2)")
                     
                             } else{
-                                print ("the winner is \(fighterFromTeam1)")
-                                winner = fighterFromTeam1
+                                
+                                print( "the winner of the \(round) is \(fighterFromTeam1)")
                             }
                     }
             }
         
-                return "the winner of the \(round) is \(winner) "
+               
         }
         if (player1.fighters.count == 0)  && (player2.fighters.count != 0) {
-            return "the winner of the game is :\( player1)"
+            print("the winner of the game is :\( player1)")
             
         }
          if  (player1.fighters.count != 0)  && (player2.fighters.count == 0){
-            return "the winner of the game is :\( player2)"
+            print("the winner of the game is :\( player2)")
          }
          else {
-            return "equal game between \( player1) and \(player2)"
+            print("equal game between \( player1) and \(player2)")
          }
     }
             

@@ -6,3 +6,10 @@
 //
 
 import Foundation
+let new = Game()
+
+
+
+
+
+

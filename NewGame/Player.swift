@@ -8,18 +8,26 @@
 import Foundation
 
 
-class Player : Fighter {
-    
-    var fighter :Fighter
+class Player  {
+
+    let name : String
     var fighters = [Fighter]()
    
-    init(fighters : [Fighter], fighter : Fighter, fighterName : String, weopon : Weapon){
-        self.fighter = fighter
-        super.init(fighterName: fighterName, weopon: weopon)
+    init(){
         
+        print ("name of player please?")
+        if let name = readLine(){
+            self.name = name
+                    }
+        else {
+                print ("I dont't understant your name")
+                self.name = "djo"
+                        }
         for _ in 0...2 {
+            let fighter = Fighter()
             self.fighters.append(fighter)
         }
+        
     }
         
 }
