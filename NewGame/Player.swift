@@ -12,20 +12,28 @@ class Player  {
 
     let name : String
     var fighters = [Fighter]()
+    var fightersName = [String]()
    
     init(){
-        
-        print ("name of player please?")
+        print ("Hello 🤙 your are a player in  <<☠️👊 MortelCombat 👊☠️>>"
+               + "\nwhat is your name please?")
+            
         if let name = readLine(){
             self.name = name
+            print(""
+                  + "\n Welcome \(name) , now you will choose your three fighter:")
                     }
         else {
                 print ("I dont't understant your name")
                 self.name = "djo"
+            print(" Welcome \(name) , now you will choose your 3 fighters:")
                         }
-        for _ in 0...2 {
+        for i in 1...3 {
+            print(""
+                + "\n choose your \(i) fighter from list below ?")
             let fighter = Fighter()
             self.fighters.append(fighter)
+            self.fightersName.append("\(i):\(fighter.pseudo)")
         }
         
     }

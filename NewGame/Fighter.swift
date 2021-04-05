@@ -17,7 +17,7 @@ class Fighter {
     
     init (){
         
-        print (" choose your fighters?"
+        print (""
                 + "\n1. 🥷🏾 ninja"
                 + "\n2. 🦸🏻 superHéroine"
                 + "\n3. 🧑🏼‍⚖️ juge"
@@ -33,70 +33,70 @@ class Fighter {
                                     self.name = "🥷🏾 ninja"
                                     print ("Assigned pseudo to your fighter ?")
                                     if let pseudo = readLine(){
-                                        self.pseudo = pseudo
+                                        self.pseudo = "🥷🏾 \(pseudo)"
                                                 }else {
                                                     print ("I dont't understant your pseudo")
-                                                    self.pseudo = "lili11"
+                                                    self.pseudo = "🥷🏾 lili11"
                                                     }
                 
                             case "2":
                                     self.name = "🦸🏻 superHéroine"
                                     print ("Assigned pseudo to your fighter ?")
                                     if let pseudo = readLine(){
-                                        self.pseudo = pseudo
+                                        self.pseudo = "🦸🏻 \(pseudo)"
                                             }else {
                                                 print ("I dont't understant your pseudo")
-                                                self.pseudo = "moms01"
+                                                self.pseudo = "🦸🏻 moms01"
                                             }
                 
                             case "3":
                                     self.name = "🧑🏼‍⚖️ juge"
                                     print ("Assigned pseudo to your fighter ?")
                                     if let pseudo = readLine(){
-                                        self.pseudo = pseudo
+                                        self.pseudo = "🧑🏼‍⚖️ \(pseudo)"
                                             }else {
                                                 print ("I dont't understant your pseudo")
-                                                self.pseudo = "titi60"
+                                                self.pseudo = "🧑🏼‍⚖️ titi60"
                                             }
                 
                             case "4":
                                     self.name = "🦹🏼 super-vilaine"
                                     print ("Assigned pseudo to your fighter ?")
                                     if let pseudo = readLine(){
-                                        self.pseudo = pseudo
+                                        self.pseudo = "🦹🏼  \(pseudo)"
                                             }else {
                                                 print ("I dont't understant your pseudo")
-                                                self.pseudo = "rikiki77"
+                                                self.pseudo = "🦹🏼 rikiki77"
                                             }
                 
                             case "5":
                                     self.name = "🧝🏿 elfe"
                                     print ("Assigned pseudo to your fighter ?")
                                     if let pseudo = readLine(){
-                                        self.pseudo = pseudo
+                                        self.pseudo = "🧝🏿 \(pseudo)"
                                             }else {
                                                 print ("I dont't understant your pseudo")
-                                                self.pseudo = "Koko95"
+                                                self.pseudo = "🧝🏿 Koko95"
                                             }
                 
                             case "6":
                                     self.name = "🧛🏻‍♀️ vampire"
                                     print ("Assigned pseudo to your fighter ?")
                                     if let pseudo = readLine(){
-                                        self.pseudo = pseudo
+                                        self.pseudo = "🧛🏻‍♀️ \(pseudo)"
                                     } else {
                                         print ("I dont't understant your pseudo")
-                                        self.pseudo = "Kiki29"
+                                        self.pseudo = "🧛🏻‍♀️ Kiki29"
                                     }
                 
                             default :
                                 print("I dont't understant, My choice for you")
                                 self.name = "🧛🏻‍♀️ vampire"
-                                self.pseudo = "XX78"
+                                self.pseudo = "🧛🏻‍♀️ XX78"
                         }
             } else  {
                 self.name = "🧛🏻‍♀️ vampire"
-                self.pseudo = "XX78"
+                self.pseudo = "🧛🏻‍♀️ XX78"
                     }
         self.weopon = Weapon()
         }
