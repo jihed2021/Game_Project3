@@ -11,7 +11,7 @@ class Fighter {
     
     var name : String
     var pseudo : String
-    var lifePoint : Int = 1000
+    var lifePoint : Int = 100
     var weopon : Weapon
     
     
@@ -90,7 +90,7 @@ class Fighter {
                                     }
                 
                             default :
-                                print("I dont't understant, My choice for you")
+                                print("I dont't understant, My choice for you :🧛🏻‍♀️ XX78")
                                 self.name = "🧛🏻‍♀️ vampire"
                                 self.pseudo = "🧛🏻‍♀️ XX78"
                         }
@@ -100,7 +100,43 @@ class Fighter {
                     }
         self.weopon = Weapon()
         }
-    
+    func life () -> String{
+        if lifePoint <= 5 || lifePoint <= 0{
+        return "lifePoint: 💔 🚑 ---->⚰️"
+        }
+        else if  lifePoint > 5 && lifePoint <= 10 {
+            return "⚠️⚠️⚠️❣️ lifePoint: 🔴"
+        }
+        else if lifePoint  > 10 && lifePoint  <= 20 {
+            
+            return "⚠️⚠️❣️ lifePoint (20%) : 🔴🔴"
+        }
+        else if lifePoint  > 20 && lifePoint  <= 30 {
+            return "⚠️❣️ lifePoint (30 %) : 🔴🔴🔴"
+        }
+        else if lifePoint > 30 && lifePoint  <= 40{
+            return "❣️ lifePoint (40 %) : 🔴🔴🔴🔴"
+        }
+        else if lifePoint  > 40 && lifePoint  <= 50  {
+            return "lifePoint (50 %): 🔴🔴🔴🔴🔴"
+        }
+        else if lifePoint > 50 && lifePoint <= 60 {
+            return "lifePoint: 🔴🔴🔴🔴🔴🟢"
+        }
+        else if lifePoint  > 60 && lifePoint  <= 70 {
+            
+            return "lifePoint: 🔴🔴🔴🔴🔴🟢🟢"
+        }
+        else if lifePoint > 70 && lifePoint  <= 80 {
+            return "lifePoint: 🔴🔴🔴🔴🔴🟢🟢🟢"
+        }
+        else if lifePoint  > 80 && lifePoint <= 90 {
+            
+            return "lifePoint:【🔴🔴🔴🔴🔴🟢🟢🟢🟢】"
+        }
+        return "✅🏋🏻 (100 %) "
+    }
     
     }
+   
 

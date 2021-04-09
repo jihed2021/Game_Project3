@@ -16,70 +16,54 @@ class Weapon {
         print ("choose weapon for your fighter ?"
                 + "\n1. Knife 🔪"
                 + "\n2. Pistol 🔫"
-                + "\n3. Klashnikov "
-                + "\n4. Revoler "
-                + "\n5. Shotgun "
-                + "\n6. PrecisionRifle "
-                + "\n7. Hammer&pick ⛏+🗡"
-                + "\n8. Pick ⛏"
-                + "\n9. Bombe 💣"
-                + "\n10. Dagger 🗡"
-                + "\n11. Axe 🪓"
-                + "\n12. Crossed swords ⚔️")
+                + "\n3. Hammer&pick ⛏+🗡"
+                + "\n4. Pick ⛏"
+                + "\n5. Bombe 💣"
+                + "\n6. Dagger 🗡"
+                + "\n7. Axe 🪓"
+                + "\n8. Crossed swords ⚔️")
         
         if let choice = readLine() {
             switch choice {
             case "1":
                 self.weaponName = "knife 🔪"
-                self.weaponDamage = 25
+                self.weaponDamage = 5
             case "2":
                 self.weaponName = "pistol 🔫"
-                self.weaponDamage = 105
+                self.weaponDamage = 45
             case "3":
-                self.weaponName = "klashnikov"
-                self.weaponDamage = 150
-            case "4":
-                self.weaponName = "revoler"
-                self.weaponDamage = 110
-            case "5":
-                self.weaponName = "shotgun"
-                self.weaponDamage = 90
-            case "6":
-                self.weaponName = "precisionRifle"
-                self.weaponDamage = 80
-            case "7":
-                self.weaponName = "hammer&pick ⛏+🗡 "
-                self.weaponDamage  = 60
-            case "8":
-                self.weaponName = "pick ⛏"
-                self.weaponDamage = 20
-            case "9":
-                self.weaponName = "bombe💣"
-                self.weaponDamage  = 100
-            case "10":
-                self.weaponName = "dagger🗡"
-                self.weaponDamage = 30
-            case "11":
-                self.weaponName = "axe🪓"
+                self.weaponName = "Hammer&pick ⛏+🗡"
                 self.weaponDamage = 40
-            case "12":
+            case "4":
+                self.weaponName = "Pick ⛏"
+                self.weaponDamage = 15
+            case "5":
+                self.weaponName = "bombe💣"
+                self.weaponDamage  = 20
+            case "6":
+                self.weaponName = "dagger🗡"
+                self.weaponDamage = 25
+            case "7":
+                self.weaponName = "axe🪓"
+                self.weaponDamage = 20
+            case "8":
                 self.weaponName = "crossed swords ⚔️"
-                self.weaponDamage = 50
+                self.weaponDamage = 35
             default :
                 print("I dont't understant, please choose your fighters will have the weak weapon")
-                self.weaponName = "pick ⛏"
-                self.weaponDamage = 20
+                self.weaponName = "knife 🔪"
+                self.weaponDamage = 5
             }
         }else{
             print("I dont't understant, please choose your fighters will have the weak weapon")
-            self.weaponName = "pick ⛏"
-            self.weaponDamage = 20
+            self.weaponName = "knife 🔪"
+            self.weaponDamage = 5
         }
     }
     
     func changeArm() { // permet de changer l'arme au hasard
-        let arms = ["1.knife 🔪", "2.pistol 🔫", "3.klashnikov ", "4.revoler","5.shotgun" , "6.precisionRifle", "7.hammer&pick ⛏+🗡", "8.pick ⛏", "9.bombe💣", "10.dagger🗡" , "11.axe🪓", "12.crossed swords ⚔️"]
-        let damage = [25, 105, 150, 110, 90 , 80, 60, 20, 100, 30 , 40, 50]
+        let arms = ["Knife 🔪","Pistol 🔫","Hammer&pick ⛏+🗡","Pick ⛏","bombe💣","dagger🗡","axe🪓","crossed swords ⚔️"]
+        let damage = [5, 45, 40, 15, 20 , 25, 20, 35]
         
         let randomIndex = arc4random_uniform(UInt32(arms.count))
         

@@ -12,8 +12,7 @@ class Player  {
 
     let name : String
     var fighters = [Fighter]()
-    var fightersName = [String]()
-   
+
     init(){
         print ("Hello 🤙 your are a player in  <<☠️👊 MortelCombat 👊☠️>>"
                + "\nwhat is your name please?")
@@ -26,18 +25,23 @@ class Player  {
         else {
                 print ("I dont't understant your name")
                 self.name = "djo"
-            print(" Welcome \(name) , now you will choose your 3 fighters:")
+            print("Welcome \(name) , now you will choose your 3 fighters:")
                         }
-        for i in 1...3 {
+        for index in 1...3 {
             print(""
-                + "\n choose your \(i) fighter from list below ?")
+                + "\nchoose your \(index) fighter from list below ?")
             let fighter = Fighter()
             self.fighters.append(fighter)
-            self.fightersName.append("\(i):\(fighter.pseudo)")
         }
         
     }
-        
+    func fightersName() -> [String] {
+        var names = [String]()
+        for (index, fighter) in fighters.enumerated() {
+            names.append("\(index). \(fighter.pseudo)")
+        }
+        return names
+    }
 }
 
 
