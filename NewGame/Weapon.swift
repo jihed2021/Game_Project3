@@ -8,21 +8,11 @@
 import Foundation
 
 class Weapon {
-    var weaponName : String  // Renseigner après réponse de l'utilisateur
-    var weaponDamage : Int  // Renseigner après réponse de l'utilisateur
-    
+    var weaponName: String  // Renseigner après réponse de l'utilisateur
+    var weaponDamage: Int  // Renseigner après réponse de l'utilisateur
     init () {
-        
-        print ("choose weapon for your fighter ?"
-                + "\n1. Knife 🔪"
-                + "\n2. Pistol 🔫"
-                + "\n3. Hammer&pick ⛏+🗡"
-                + "\n4. Pick ⛏"
-                + "\n5. Bombe 💣"
-                + "\n6. Dagger 🗡"
-                + "\n7. Axe 🪓"
-                + "\n8. Crossed swords ⚔️")
-        
+        print("choose weapon for your fighter ?"
+                + "\n1.Knife 🔪|2.Pistol 🔫|3.Hammer&pick ⛏+🗡|4. Pick ⛏|5.Bombe 💣|6.Dagger 🗡|7.Axe 🪓|8.Crossed swords ⚔️")
         if let choice = readLine() {
             switch choice {
             case "1":
@@ -54,23 +44,17 @@ class Weapon {
                 self.weaponName = "knife 🔪"
                 self.weaponDamage = 5
             }
-        }else{
+        } else {
             print("I dont't understant, please choose your fighters will have the weak weapon")
             self.weaponName = "knife 🔪"
             self.weaponDamage = 5
         }
     }
-    
     func changeArm() { // permet de changer l'arme au hasard
-        let arms = ["Knife 🔪","Pistol 🔫","Hammer&pick ⛏+🗡","Pick ⛏","bombe💣","dagger🗡","axe🪓","crossed swords ⚔️"]
-        let damage = [5, 45, 40, 15, 20 , 25, 20, 35]
-        
+        let arms = ["Knife 🔪", "Pistol 🔫", "Hammer&pick ⛏+🗡", "Pick ⛏", "bombe💣", "dagger🗡", "axe🪓", "crossed swords ⚔️"]
+        let damage = [5, 45, 40, 15, 20, 25, 20, 35]
         let randomIndex = arc4random_uniform(UInt32(arms.count))
-        
         self.weaponName =  arms[Int(randomIndex)]
-        self.weaponDamage = damage[Int (randomIndex)]
-        
-        
+        self.weaponDamage = damage[Int(randomIndex)]
     }
 }
-
