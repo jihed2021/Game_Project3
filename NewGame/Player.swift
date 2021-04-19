@@ -8,20 +8,10 @@
 import Foundation
 
 class Player {
-    let name: String
+    var name: String = ""
     var fighters = [Fighter]()
     init() {
-        print("Hello 🤙 your are a player in  🔥☠️👊 MortelCombat 👊☠️🔥"
-               + "\nwhat is your name please?")
-        if let name = readLine() {
-            self.name = name
-            print(""
-                  + "\nWelcome \(name) , now you will choose your three fighter:")
-                    } else {
-                print("I dont't understant your name")
-                self.name = "djo"
-            print("Welcome \(name) , now you will choose your 3 fighters:")
-                        }
+        self.name = askForName()
         for index in 1...3 {
             print(""
                 + "\nchoose your \(index) fighter from list below ?")
@@ -87,5 +77,23 @@ class Player {
             fighterFromTeam2 = defender.fighters[0]
             return fighterFromTeam2
         }
+    }
+    func betterReadLine() -> String {
+        if let myReadLine = readLine() {
+            return myReadLine
+        } else {
+            return betterReadLine()
+        }
+    }
+    func askForName() -> String {
+        print("Hello 🤙 your are a player in  🔥☠️👊 MortelCombat 👊☠️🔥"
+               + "\nwhat is your name please?")
+        var nameChoosed = betterReadLine()
+        while nameChoosed == ""{
+            print("please whrite your name")
+          nameChoosed = betterReadLine()
+        }
+        print("hi \(nameChoosed) now you will choose your three fighters for game" )
+        return nameChoosed
     }
 }

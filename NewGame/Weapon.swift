@@ -40,12 +40,12 @@ class Weapon {
                 self.weaponName = "crossed swords ⚔️"
                 self.weaponDamage = 35
             default :
-                print("I dont't understant, please choose your fighters will have the weak weapon")
+                print("I dont't understant, so you have a weak weapon(knife)")
                 self.weaponName = "knife 🔪"
                 self.weaponDamage = 5
             }
         } else {
-            print("I dont't understant, please choose your fighters will have the weak weapon")
+            print("I dont't understant, a weak weapon will be affected to your fighter")
             self.weaponName = "knife 🔪"
             self.weaponDamage = 5
         }

@@ -35,7 +35,7 @@ class Game {
         let fighterT1 = attacker.chooseFighter(attacker, defender)
         let fighterT2 = defender.chooseFighterFromOppesingTeams(attacker, defender)
         print("[\(fighterT1.pseudo)]:\(fighterT1.life())🔥🤜 VS 🤛🔥[\(fighterT2.pseudo)]: \(fighterT2.life())"
-                + "\n    ⚜️⚜️⚜️ Round : \(round) ⚜️⚜️⚜️ --> \(fighterT1.pseudo) ] you can start attack ")
+                + "\n    ⚜️⚜️⚜️ Round : \(round) ⚜️⚜️⚜️ --> [\(fighterT1.pseudo)] you can start attack ")
         while fighterT1.lifePoint >= 5 && fighterT2.lifePoint >= 5 {
             if fighterT1.lifePoint <= 50 && fighterT1.lifePoint >= 5 {
                 fighterT1.weopon.changeArm()
@@ -60,20 +60,20 @@ class Game {
         }
         if (fighterT2.lifePoint >= 5) && (fighterT1.lifePoint < 5) {
             print("❌\(fighterT1.pseudo)❌ The🏅 in round \(round) is[\(fighterT2.pseudo)] from team ⟪\(defender.name)⟫")
+            score.append("round: \(round) ||\(attacker.name):\(fighterT1.pseudo)[\(fighterT1.lifePoint)]"
+                            + "||\(defender.name):\(fighterT2.pseudo)[\(fighterT2.lifePoint)]")
             for(index, fighter) in attacker.fighters.enumerated() {
                 if  fighter.pseudo.contains(fighterT1.pseudo) {
-            score.append("round: \(round) ||\(attacker.name):\(fighterT1.pseudo)[\(fighterT1.lifePoint)]"
-                            + "\n ||\(defender.name):\(fighterT2.pseudo)[\(fighterT2.lifePoint)]")
                     attacker.fighters.remove(at: index)
                     round += 1
                 }
             }
         } else if (fighterT1.lifePoint >= 5) && (fighterT2.lifePoint < 5) {
             print("❌\(fighterT2.pseudo)❌The🏅 in round:\(round) is[\(fighterT1.pseudo)] from team ⟪\(attacker.name)⟫")
+            score.append("round: \(round) ||\(attacker.name):\(fighterT1.pseudo)[\(fighterT1.lifePoint)]"
+                            + "||\(defender.name):\(fighterT2.pseudo)[\(fighterT2.lifePoint)]")
             for(index, fighter) in defender.fighters.enumerated() {
                 if  fighter.pseudo.contains(fighterT2.pseudo) {
-                    score.append("round: \(round) ||\(attacker.name):\(fighterT1.pseudo)[\(fighterT1.lifePoint)]"
-                                    + "\n ||\(defender.name):\(fighterT2.pseudo)[\(fighterT2.lifePoint)]")
                     defender.fighters.remove(at: index)
                     round += 1
                 }

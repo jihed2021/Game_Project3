@@ -13,16 +13,23 @@ class Fighter {
     var lifePoint: Int = 100
     var weopon: Weapon
     init() {
-        print("1. 🥷🏾 ninja||2. 🦸🏻 superHéroine||3. 🧑🏼‍⚖️ juge||4. 🦹🏼 super-vilaine||5. 🧝🏿 elfe||6. 🧛🏻‍♀️ vampire")
-        func choosePseudo() -> String {
-            print("Assigned pseudo to your fighter ?")
-            if let pseudo = readLine() {
-               return  pseudo
+        func askedPseudo() -> String {
+            if let myReadLine = readLine() {
+                return myReadLine
             } else {
-                print("I dont't understant your pseudo")
-                return  "Kiki29"
+                return askedPseudo()
             }
         }
+        func choosePseudo() -> String {
+            print("Assigned pseudo to your fighter ?")
+            var fighterPseudo = askedPseudo()
+                while fighterPseudo == "" {
+                    print("please assigned pseudo to your fighter")
+                    fighterPseudo = askedPseudo()
+                }
+               return  fighterPseudo
+        }
+        print("1. 🥷🏾 ninja||2. 🦸🏻 superHéroine||3. 🧑🏼‍⚖️ juge||4. 🦹🏼 super-vilaine||5. 🧝🏿 elfe||6. 🧛🏻‍♀️ vampire")
         if let choice = readLine() {
                     switch choice {
                     case "1":
@@ -44,19 +51,19 @@ class Fighter {
                         self.name = "🧛🏻‍♀️ vampire"
                         self.pseudo = "🧛🏻‍♀️ " + choosePseudo()
                     default :
-                                print("I dont't understant, My choice for you :🧛🏻‍♀️ XX78")
+                                print("I dont understant your choice ok I choose for you 🧛🏻‍♀️ vampire")
                                 self.name = "🧛🏻‍♀️ vampire"
-                                self.pseudo = "🧛🏻‍♀️ XX78"
+                               self.pseudo = choosePseudo()
                         }
             } else {
                 self.name = "🧛🏻‍♀️ vampire"
-                self.pseudo = "🧛🏻‍♀️ XX78"
+                self.pseudo = choosePseudo()
                     }
         self.weopon = Weapon()
         }
     func life () -> String {
         if lifePoint < 5 || lifePoint <= 0 {
-        return "💔 💔 🚑 "
+        return "💔 + 🚑 "
         } else if  lifePoint >= 5 && lifePoint <= 10 {
             return "⚠️❣️(10 %) 🔴"
         } else if lifePoint  > 10 && lifePoint  <= 20 {
