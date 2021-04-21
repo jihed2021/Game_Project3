@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Weapon {
+final class Weapon {
     var weaponName: String  // Renseigner après réponse de l'utilisateur
     var weaponDamage: Int  // Renseigner après réponse de l'utilisateur
     init () {

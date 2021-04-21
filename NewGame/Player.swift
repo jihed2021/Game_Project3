@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Player {
+final class Player {
     var name: String = ""
     var fighters = [Fighter]()
     init() {
@@ -22,11 +22,11 @@ class Player {
     func fightersName() -> [String] {
         var names = [String]()
         for (index, fighter) in fighters.enumerated() {
-            names.append("\(index). \(fighter.pseudo)")
+            names.append("\(index).\(fighter.pseudo)[LP:\(fighter.lifePoint), \(fighter.weopon.weaponName)]")
         }
         return names
     }
-    func chooseFighter (_ attacker: Player, _ defender: Player) -> Fighter {
+    static func chooseFighter (_ attacker: Player, _ defender: Player) -> Fighter {
         var fighterFromTeam1: Fighter
         print("👉 〔 \(attacker.name) 〕 please choose your fighter for this round:")
         for fighter in attacker.fightersName() {
@@ -52,7 +52,7 @@ class Player {
             return fighterFromTeam1
         }
     }
-    func chooseFighterFromOppesingTeams (_ attacker: Player, _ defender: Player) -> Fighter {
+    static func chooseFighterFromOppesingTeams (_ attacker: Player, _ defender: Player) -> Fighter {
         var fighterFromTeam2: Fighter
         print("👉 〔\(attacker.name)〕 please choose fighter to fight from team of 〔\(defender.name)〕 for this round:")
         for fighter in defender.fightersName() {
@@ -95,5 +95,19 @@ class Player {
         }
         print("hi \(nameChoosed) now you will choose your three fighters for game" )
         return nameChoosed
+    }
+    func hasAlivePlayer() -> Bool {
+        for _ in fighters {
+            return true
+        }
+        return false
+    }
+    func checkForDeadFighters() {
+        for (index, fighter) in fighters.enumerated() {
+            if fighter.isDead() {
+                fighters.remove(at: index)
+                print("❌ \(fighter.pseudo) ❌ is dead ⚰️")
+            }
+        }
     }
 }

@@ -6,4 +6,6 @@
 //
 
 import Foundation
-let new = Game()
+
+let game = Game()
+game.startBattle()
