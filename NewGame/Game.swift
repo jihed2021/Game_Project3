@@ -12,7 +12,6 @@ final class Game {
     var player2: Player
     var round: Int = 1
     var results = [Any]()
-    
     init() {
         self.player1 = Player()
         print("\(player1.name) : fighters ➡️ \(player1.fightersName()) ⬅️")
@@ -21,7 +20,7 @@ final class Game {
     }
     func playRound (attacker: Player, defender: Player) {
         let fighterT1 = attacker.chooseFighter(attacker, defender)
-        let fighterT2 = defender.chooseFighterFromOppesingTeams(attacker, defender)
+        let fighterT2 = defender.chooseFighterFromOpposingTeams(attacker, defender)
         print("[\(fighterT1.pseudo)]:\(fighterT1.life())🔥🤜 VS 🤛🔥[\(fighterT2.pseudo)]: \(fighterT2.life())"
                 + "\n    ⚜️⚜️⚜️ Round : \(round) ⚜️⚜️⚜️ --> [\(fighterT1.pseudo)] you can start attack ")
         fighterT1.weopon.changeArm()

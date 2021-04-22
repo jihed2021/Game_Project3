@@ -40,7 +40,7 @@ final class Weapon {
                 self.weaponName = "crossed swords ⚔️"
                 self.weaponDamage = 35
             default :
-                print("I dont't understant, so you have a weak weapon(knife)")
+                print("I dont't understant, so you have a weak weapon(knife🔪)")
                 self.weaponName = "knife 🔪"
                 self.weaponDamage = 5
             }
