@@ -11,25 +11,10 @@ final class Fighter {
     var name: String
     var pseudo: String
     var lifePoint: Int = 100
-    var weopon: Weapon
-    private static func askedPseudo() -> String {
-        if let myReadLine = readLine() {
-            return myReadLine
-        } else {
-            return askedPseudo()
-        }
-    }
-    private static func choosePseudo() -> String {
-        print("Assigned pseudo to your fighter ?")
-        var fighterPseudo = askedPseudo()
-        while fighterPseudo == "" {
-            print("please assigned pseudo to your fighter")
-            fighterPseudo = askedPseudo()
-        }
-        return  fighterPseudo
-    }
+    var weapon: Weapon
+    
     init() {
-        print("1. 🥷🏾 ninja||2. 🦸🏻 superHéroine||3. 🧑🏼‍⚖️ juge||4. 🦹🏼 super-vilaine||5. 🧝🏿 elfe||6. 🧛🏻‍♀️ vampire")
+        print("1. 🥷🏾 ninja ◘ 2. 🦸🏻 superHéroine ◘ 3. 🧑🏼‍⚖️ juge ◘ 4. 🦹🏼 super-vilaine ◘ 5. 🧝🏿 elfe ◘ 6. 🧛🏻‍♀️ vampire")
         if let choice = readLine() {
             switch choice {
             case "1":
@@ -59,9 +44,10 @@ final class Fighter {
             self.name = "🧛🏻‍♀️ vampire"
             self.pseudo = "🧛🏻‍♀️ " + Fighter.choosePseudo()
         }
-        self.weopon = Weapon()
+        self.weapon = Weapon()
     }
-      func life () -> String {
+    
+    func life() -> String {
         if lifePoint <= 0 {
             return "❌ 💔 ❌"
         } else if  lifePoint > 0 && lifePoint <= 10 {
@@ -85,7 +71,26 @@ final class Fighter {
         }
         return "✅🏋🏻 (100 %) "
     }
-    func isDead () -> Bool {
+    
+    func isDead() -> Bool {
         return lifePoint <= 0
+    }
+    
+    private static func askedPseudo() -> String {
+        if let myReadLine = readLine() {
+            return myReadLine
+        } else {
+            return askedPseudo()
+        }
+    }
+    
+    private static func choosePseudo() -> String {
+        print("Assigned pseudo to your fighter ?")
+        var fighterPseudo = askedPseudo()
+        while fighterPseudo == "" {
+            print("please assigned pseudo to your fighter")
+            fighterPseudo = askedPseudo()
+        }
+        return  fighterPseudo
     }
 }
